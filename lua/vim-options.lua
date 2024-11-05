@@ -14,3 +14,10 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
+
+-- Setting up keys for tabs
+
+vim.keymap.set('n', 'tn', ':tabnew<CR>')
+vim.keymap.set('n', 'td', ':tabclose<CR>')
+vim.keymap.set('n', 'th', ':tabnext -1<CR>')
+vim.keymap.set('n', 'tl', ':tabnext +1<CR>')
