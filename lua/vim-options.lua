@@ -13,6 +13,10 @@ vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+
+-- Mapping ESC to clear search highlighting
+vim.keymap.set('n', 'ESC', ':nohlsearch<CR>', { noremap = true, silent = true })
+
 vim.wo.number = true
 
 -- Setting up keys for tabs
