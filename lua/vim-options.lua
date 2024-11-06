@@ -21,3 +21,15 @@ vim.keymap.set('n', 'tn', ':tabnew<CR>')
 vim.keymap.set('n', 'td', ':tabclose<CR>')
 vim.keymap.set('n', 'th', ':tabnext -1<CR>')
 vim.keymap.set('n', 'tl', ':tabnext +1<CR>')
+
+-- Custom things
+--
+function copyRelativePathAndLineNumber()
+    local path = vim.fn.expand("%")
+    local line_number = vim.fn.line(".")
+  local info = path .. ":" .. line_number
+  vim.fn.system("echo " .. vim.fn.shellescape(info) .. " | pbcopy")
+  print("Copied: " .. info)
+end
+
+vim.api.nvim_set_keymap('n', '<leader>kc', '<cmd>lua copyRelativePathAndLineNumber()<CR>', { noremap = true, silent = true })
