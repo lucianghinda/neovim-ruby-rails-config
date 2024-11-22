@@ -37,3 +37,7 @@ function copyRelativePathAndLineNumber()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>kc', '<cmd>lua copyRelativePathAndLineNumber()<CR>', { noremap = true, silent = true })
+
+-- Set Leader+y to copy to system clipboard
+--
+vim.keymap.set('v', '<leader>y', '"+y')
