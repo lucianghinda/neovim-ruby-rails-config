@@ -24,6 +24,27 @@ return {
         capabilities = capabilities
       })
 
+         lspconfig.yamlls.setup({
+      capabilities = capabilities,
+      settings = {
+        yaml = {
+          schemas = {
+            ["https://www.rubyschema.org/i18n-tasks.json"] = "i18n-tasks.yml",
+            ["https://www.rubyschema.org/lefthook.json"] = "lefthook.yml",
+            ["https://www.rubyschema.org/rubocop.json"] = ".rubocop.yml",
+            ["https://www.rubyschema.org/i18n/locale.json"] = "locale/*.yml",
+            ["https://www.rubyschema.org/kamal/deploy.json"] = "deploy.yml",
+            ["https://www.rubyschema.org/packwerk/package.json"] = "package.yml",
+            ["https://www.rubyschema.org/rails/cache.json"] = "cache.yml",
+            ["https://www.rubyschema.org/rails/database.json"] = "database.yml",
+            ["https://www.rubyschema.org/rails/queue.json"] = "queue.yml",
+            ["https://www.rubyschema.org/rails/recurring.json"] = "recurring.yml",
+            ["https://www.rubyschema.org/rails/storage.json"] = "storage.yml",
+          },
+        },
+      },
+    })
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
