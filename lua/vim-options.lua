@@ -41,3 +41,21 @@ vim.api.nvim_set_keymap('n', '<leader>kc', '<cmd>lua copyRelativePathAndLineNumb
 -- Set Leader+y to copy to system clipboard
 --
 vim.keymap.set('v', '<leader>y', '"+y')
+
+
+-- Enable wrapping and break at word boundaries
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.showbreak = "↪ "  -- optional: show a symbol at wrapped lines
+
+-- Remap normal mode `j` to move down by *visual* lines (gj), not file lines
+vim.keymap.set("n", "j", "gj", { noremap = true, silent = true })
+
+-- Remap normal mode `k` to move up by *visual* lines (gk), not file lines
+vim.keymap.set("n", "k", "gk", { noremap = true, silent = true })
+
+-- Remap normal mode `0` to move to the beginning of the *visual* line (g0)
+vim.keymap.set("n", "0", "g0", { noremap = true, silent = true })
+
+-- Remap normal mode `$` to move to the end of the *visual* line (g$)
+vim.keymap.set("n", "$", "g$", { noremap = true, silent = true })
