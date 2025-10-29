@@ -19,11 +19,20 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      -- Configure ruby_lsp using the new vim.lsp.config API
+       -- Ruby LSP: default for all Ruby projects 
       vim.lsp.config.ruby_lsp = {
         cmd = { 'ruby-lsp' },
         filetypes = { 'ruby' },
         root_markers = { 'Gemfile', '.git' },
+        capabilities = capabilities,
+      }
+
+
+      -- Configure Sorbet to only start if sorbet/config exists
+      vim.lsp.config.sorbet = {
+        cmd = { 'sorbet', 'lsp' },
+        filetypes = { 'ruby' },
+        root_markers = { 'sorbet/config' },  -- Only start if this file exists
         capabilities = capabilities,
       }
 
