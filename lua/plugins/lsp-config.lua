@@ -71,6 +71,12 @@ return {
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+
+      -- In your lsp-config.lua, add to your keymaps section:
+      vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+      vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Diagnostic list' })
     end,
   },
 }
